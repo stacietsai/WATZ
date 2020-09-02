@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            width: 100vw;
+            background-image: url(images/BG2.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .wrapper {
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .member-bblock {
+            top: calc(50vh + 70px);
+            transform: translateY(-50%);
+            width: 465px;
+            height: 545px;
+            position: absolute;
+        }
+        .bsignup{
+            width: 400px;
+            height: 545px;
+            position: absolute;
+        }
+        .member-bblock li {
+            width: 400px;
+            height: 545px;
+            position: absolute;
+        }
+
+        .tag {
+            position: absolute;
+            background: #F2DE79;
+            border-radius: 15px;
+            width: 70px;
+            height: 140px;
+            right: -65px;
+            top: 50%;
+            transform: translate(0, -50%);
+            /* z-index: -1; */
+            cursor: pointer;
+        }
+
+        .tag h5 {
+            writing-mode: vertical-lr;
+            letter-spacing: 3px;
+            font-weight: 400;
+            position: absolute;
+            right: 15%;
+            top: 50%;
+            transform: translate(-12%, -50%);
+            cursor: pointer;
+
+        }
+
+        .tag-signup {
+            top: 90%;
+            transform: translate(0, -90%);
+            background: #0388A6;
+            cursor: pointer;
+
+        }
+
+        .tag-signup h5 {
+            color: #ffffff;
+            cursor: pointer;
+
+        }
+
+        .member-login {
+            background: #F2DE79;
+            width: 420px;
+            height: 545px;
+            border-radius: 15px;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+
+        }
+
+        .member-login.signup {
+            background: #0388A6;
+            position: absolute;
+        }
+
+        @media screen and (max-width: 992px) {
+            body {
+                background-image: url(images/BG-mobile2.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .wrapper {
+                width: 100%;
+            }
+
+            .member-bblock {
+                width: 85vw;
+                height:103vw;
+            }
+            .bsignup{
+                position: absolute;
+                width: 80vw;
+                height: 103vw;
+            }
+            .member-bblock li {
+                width: 80vw;
+                height: 103vw;
+
+            }
+
+            .member-login {
+                width: 80vw;
+                height: 103vw;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .tag {
+                width: 20vw;
+                height: 25vw;
+                border-radius: 10px;
+                right:-6vw;
+            }
+
+            .tag h5 {
+                font-size: 12px;
+                right: 8%;
+                top: 40%;
+                transform: translate(-10%, -23%);
+            }
+        }
+
+        /* ---------------------------------form--------------------------------------- */
+        .member-login h2 {
+            font-family: 'Fredoka One', cursive;
+            text-align: center;
+            margin-top: 70px;
+            margin-bottom: 70px;
+            /* padding: 72px; */
+            letter-spacing: 4px;
+            /* margin-bottom: 2px; */
+            color: #404040;
+        }
+
+        .member-login.signup h2 {
+            color: #ffffff;
+        }
+
+        @media screen and (max-width: 992px) {
+            .member-login h2 {
+                font-size: 32px;
+                /* padding: 40px; */
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+        }
+
+        /* ---------------------------------text---------------------------------------- */
+        .bg-inputwrapper {
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .input-wrapper {
+            background: #ffffff;
+            width: 292px;
+            height: 45px;
+            border-radius: 2px;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+      
+        .input-wrapper img{
+            width: 20px;
+            height: 20px;
+            margin: 11px 16px;
+            cursor: pointer;
+        }
+        
+        .member-input {
+            border: transparent;
+            outline: none;
+            width: 292px;
+            height: 45px;
+        }
+
+        @media screen and (max-width: 992px) {
+            .member-input {
+                width: 70vw;
+                height: 8vw;
+                font-size: 16px;
+            }
+
+            .bg-inputwrapper {
+                flex-direction: column;
+                justify-content: space-evenly;
+                height: 32vw;
+            }
+
+            .input-wrapper {
+                width: 60vw;
+                height: 9vw;
+                margin-bottom: 15px;
+            }
+
+            .input-wrapper img {
+                width: 3vw;
+                height: 4vw;
+                margin: 6px 12px;
+                /* margin: 6px 12px 6px 7px; */
+            }
+        }
+
+        /* ------------------------------------input---------------------------------------- */
+        .remember {
+            margin: 20px 0 20px 0;
+            width: 292px;
+            height: 45px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .agree {
+            width: 292px;
+            height: 45px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .agree h6 {
+            color: #ffffff;
+            letter-spacing: 2px;
+            align-items: center;
+        }
+
+        .member-login.signup a {
+            color: #F2DE79;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .member-checkbox {
+            margin: 0px 10px 0px 0px;
+        }
+
+        .member-remember h6 {
+            color: #404040;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .member-forget {
+            width: 100px;
+            text-align: right;
+        }
+
+        .member-forget a {
+            color: #0388A6;
+            font-size: 12px;
+            cursor: pointer;
+            letter-spacing: 3px;
+
+        }
+
+        .member-remember {
+            justify-content: flex-start;
+            align-items: center;
+            width: 292px;
+            height: 45px;
+        }
+
+        @media screen and (max-width: 992px) {
+            .remember {
+                width: 182px;
+                margin: 0;
+            }
+
+            .member-forget {
+                width: 150px;
+            }
+
+            .member-forget a {
+                letter-spacing: 1px;
+            }
+
+            .agree {
+                width: 70vw;
+                height: 8vw;
+            }
+        }
+
+        /* ---------------------------------h6 or a--------------------------------------------------- */
+        .btn-blue {
+            width: 212px;
+            letter-spacing: 4px;
+            margin-top: 20px;
+        }
+        .btn-blue:hover{
+            background: #FF9685;
+        }
+
+        .member-login h5 {
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-top: 35px;
+        }
+
+        .member-login a {
+            color: #0388A6;
+        }
+
+        .box-signup {
+            z-index: 10;
+        }
+
+        
+
+        @media screen and (max-width: 992px) {
+            .btn-login {
+                width: 150px;
+                height: 40px;
+                margin-top: 10px;
+            }
+
+            .member-login h5 {
+                display: none;
+            }
+
+            .btn-login a {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container flex">
+        <nav class="nav flex transition">
+            <div class="nav-logo flex">
+                <a class="img-logo-img" href=""><img src="images/logo-img.svg" alt=""></a>
+                <a class="img-logo-text" href=""><img src="images/logo-text.svg" alt=""></a>
+            </div>
+            <ul class="nav-list flex transition">
+                <li class="dropdown">
+                    <a>PROJECT</a>
+                    <div class="dropdown-menu flex transition">
+                        <div class="dropdown-bg flex transition">
+                            <a class="" href="">芒果派對</a>
+                            <a class="" href="">群魔亂舞</a>
+                            <a class="" href="">灰姑娘的<br>水晶襪</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="">SHOP</a></li>
+                <li><a href="">DIY</a></li>
+                <li><a href="">WATZ</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+            <div class="nav-icon flex transition">
+                <a class="icon-wrapper none" href=""><img class="svg icon" src="images/icon-member.svg" alt=""></a>
+                <a class="icon-wrapper none" href=""><img class="svg icon" src="images/icon-cart.svg" alt=""></a>
+                <div class="menu flex">
+                    <div class="click-area flex transition" id="menuClickArea">
+                        <div class="box-bar transition">
+                            <div class="bar bar1 transition"></div>
+                            <div class="bar bar2 transition"></div>
+                            <div class="bar bar3 transition"></div>
+                        </div>
+                    </div>
+                    <div class="menu-bg transition">
+                        <div class="menu-content transition flex">
+                            <a class="img-logo-img" href=""><img src="images/logo-img.svg" alt=""></a>
+                            <ul class="menu-list">
+                                <li class="dropdown">
+                                    <a>PROJECT</a>
+                                    <div class="dropdown-menu flex transition">
+                                        <div class="dropdown-bg flex transition">
+                                            <a class="" href="">芒果派對</a>
+                                            <a class="" href="">群魔亂舞</a>
+                                            <a class="" href="">灰姑娘的水晶襪</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="">SHOP</a></li>
+                                <li><a href="">DIY</a></li>
+                                <li><a href="">WATZ</a></li>
+                                <li><a href="">CONTACT</a></li>
+                            </ul>
+                            <div class="flex">
+                                <a class="icon-wrapper" href=""><img src="images/icon-fb.svg" alt=""></a>
+                                <a class="icon-wrapper" href=""><img src="images/icon-youtube.svg" alt=""></a>
+                                <a class="icon-wrapper" href=""><img src="images/icon-twitter.svg" alt=""></a>
+                                <a class="icon-wrapper" href=""><img src="images/icon-ig.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="wrapper flex">
+            <ul class="member-bblock">
+                <div class="bsignup" id="tab1">
+                    <li class="box-signup" id="box-signup">
+                        <form class="member-login flex signup">
+                            <h2>JOIN US</h2>
+                            <div class="bg-inputwrapper flex">
+                                <div class="input-wrapper flex">
+                                    <img src="images/icon-account.svg" alt="">
+                                    <input class="member-input" type="text" placeholder="Email">
+                                </div>
+                                <div class="input-wrapper flex">
+                                    <img src="images/icon-password.svg" alt="">
+                                    <input class="member-input" type="text" placeholder="Password">
+                                    <img src="images/eye.svg" alt="">
+                                </div>
+                                <div class="input-wrapper flex">
+                                    <img src="images/icon-confirmPassword.svg" alt="">
+                                    <input class="member-input" type="text" placeholder="Confirm Password">
+                                    <img src="images/eye.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="agree flex">
+                                <input class="member-checkbox" type="checkbox" name="" id="">
+                                <h6>同意</h6><a href="">會員條款</a>
+                                <h6>與</h6><a href="">隱私權政策</a>
+                            </div>
+                            <button class="btn-blue">註冊會員</button>
+                        </form>
+                    </li>
+                    <div class="tag tag-signup" id="tag-signup">
+                        <h5>註冊帳號</h5>
+                    </div>
+                </div>
+                
+                <!------------------------signup------------------------------------------>
+                <div class="bsignup blogin" id="tab2">
+                    <li class="box-login" id="box-login">
+                        <form class="member-login flex">
+                            <h2>LOG IN</h2>
+                            <div class="input-wrapper flex">
+                                <img src="images/icon-account.svg" alt="">
+                                <input class="member-input" type="text" placeholder="Email">
+                            </div>
+                            <div class="input-wrapper flex">
+                                <img src="images/icon-password.svg" alt="">
+                                <input class="member-input" type="text" placeholder="Password">
+                                <img class="eyes" src="images/eye.svg" alt="">
+                            </div>
+                            <div class="remember flex">
+                                <div class="member-remember flex">
+                                    <input class="member-checkbox flex" type="checkbox" name="" id="">
+                                    <h6 class="flex">Remember me</h6>
+                                </div>
+                                <div class="member-forget">
+                                    <a href="">忘記密碼</a>
+                                </div>
+                            </div>
+                            <button class="btn-blue">登入帳號</button>
+                            <h5>還不是會員?點這邊
+                                <a href="">加入會員!</a>
+                            </h5>
+                        </form>
+                    </li>
+                    <div class="tag tag-login" id="tag-login">
+                        <h5>登入會員</h5>
+                    </div>
+                </div>
+                
+            </ul>
+            
+        </div>
+        <div class="btn-top flex transition" id="goTop">
+            <img src="images/arrow-top.svg" alt="">
+            <h3>TOP</h3>
+            <div class="bg-btn-top transition"></div>
+        </div>
+        <footer class="flex">
+            <div class="footer-icon flex">
+                <a class="icon-wrapper" href=""><img src="images/icon-fb.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-youtube.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-twitter.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-ig.svg" alt=""></a>
+            </div>
+            <h6>Copyright© WATZ Company All rights Reserved.</h6>
+            <img class="bg-footer flex" src="images/footer.svg" alt="">
+        </footer>
+        <div class="mobile-show fixedlist">
+            <div class="fixedlist-icon flex">
+                <a class="icon-wrapper" href=""><img src="images/icon-faq.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-sock.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-member.svg" alt=""></a>
+                <a class="icon-wrapper" href="cart.html"><img src="images/icon-cart.svg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="js/nav.js"></script>
+<script>
+   $('#tag-login').click(function(){
+    $('#box-login').css( "z-index", "11" );
+ })
+
+ $('#tag-signup').click(function(){
+    $('#box-login').removeAttr( 'style' );
+ })
+</script>
+</html>

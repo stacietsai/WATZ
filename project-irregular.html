@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project-irregular</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* -----------------empty-cart---------------        */
+
+
+        .container {
+            width: 100vw;
+            min-height: 100vh;
+            user-select: none;
+            overflow: hidden;
+        }
+
+        .block1 {
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bg-1 {
+            width: 100vw;
+            height: 100vh;
+
+        }
+
+        .bg-1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo {
+            width: 450px;
+            position: absolute;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(8px 8px 6px rgba(105, 105, 105, 0.7));
+        }
+
+        .scroll-down {
+            position: absolute;
+            flex-direction: column;
+            right: 50px;
+            bottom: 30px;
+        }
+
+        .scroll-down h3 {
+            writing-mode: vertical-lr;
+            margin-bottom: 20px;
+        }
+
+        .scroll-down img {
+            width: 30px;
+        }
+
+        .block2 {
+            width: 100vw;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bg-line {
+            /* border: 1px solid blue; */
+            align-items: center;
+        }
+
+        .bg-line li {
+            width: calc(100vw / 4);
+            height: calc(100vw / 4);
+        }
+
+        .bg-line li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+
+        .center-frame {
+            position: absolute;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        .watzbox {
+            width: 450px;
+            height: 450px;
+            margin-bottom: 40px;
+        }
+
+        .watzbox img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .seemore {
+            width: 200px;
+            height: 45px;
+            background-color: #0388A6;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            outline: none;
+            box-shadow: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .seemore h3 {
+            color: #ffffff;
+        }
+
+        .seemore:hover {
+            background-color: #FF9685;
+        }
+
+        .block3 {
+            /* width: 100vw;
+            height: 100vh; */
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .bg-3 {
+            width: 100vw;
+            height: 100vh;
+            justify-content: flex-start;
+        }
+
+        .bg-3 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .block3 .pic {
+            width: 550px;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .path-up {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            width: 700px;
+        }
+
+        .path-down {
+            position: absolute;
+            right: 0px;
+            bottom: 0;
+            width: 700px;
+        }
+
+        .block3 .seemore {
+            position: absolute;
+            right: 10%;
+            bottom: 30%;
+        }
+
+        .block4 {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bg4 {
+            width: 70vw;
+            height: 100vh;
+            position: absolute;
+            right: -5%;
+        }
+
+        .bg4 img {
+            width: 100%;
+            height: 100%;
+        }
+        .info{
+            height: 100vh;
+            /* position: absolute; */
+            z-index: 1;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* border: 1px solid greenyellow; */
+        }
+        .info img{
+            width: 450px;
+        }
+        .info .title{
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .info .title h1{
+            position: absolute;
+            color: #E7EC99;
+        }
+        .title img{
+            width: 650px;
+            height: 100px;
+        }
+        .info .style1{
+            transform: translateX(-60%);
+        }
+        .info .style2{
+            transform: translateX(-20%);
+        }
+        .block5{
+            width: 100vw;
+            height: 100vh;
+        }
+        .block5 img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container flex">
+        <nav class="nav flex transition">
+            <div class="nav-logo flex">
+                <a class="img-logo-img" href=""><img src="images/logo-img.svg" alt=""></a>
+                <a class="img-logo-text" href=""><img src="images/logo-text.svg" alt=""></a>
+            </div>
+            <ul class="nav-list flex transition">
+                <li><a href="">PROJECT</a></li>
+                <li><a href="">SHOP</a></li>
+                <li><a href="">DIY</a></li>
+                <li><a href="">WATZ</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+            <div class="nav-icon flex transition">
+                <a class="icon-wrapper" href=""><img class="svg icon" src="images/icon-member.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img class="svg icon" src="images/icon-cart.svg" alt=""></a>
+                <div class="menu flex">
+                    <div class="box-bar transition">
+                        <div class="bar bar1 transition"></div>
+                        <div class="bar bar2 transition"></div>
+                        <div class="bar bar3 transition"></div>
+                    </div>
+                    <div class="menu-bg transition">
+                        <div class="menu-content transition flex">
+                            <a class="img-logo-img" href=""><img src="images/logo-img.svg" alt=""></a>
+                            <ul class="menu-list">
+                                <li><a href="">PROJECT</a></li>
+                                <li><a href="">SHOP</a></li>
+                                <li><a href="">DIY</a></li>
+                                <li><a href="">WATZ</a></li>
+                                <li><a href="">CONTACT</a></li>
+                            </ul>
+                            <div class="flex">
+                                <a class="icon-wrapper" href=""><img src="images/icon-fb.svg" alt=""></a>
+                                <a class="icon-wrapper" href=""><img src="images/icon-youtube.svg" alt=""></a>
+                                <a class="icon-wrapper" href=""><img src="images/icon-twitter.svg" alt=""></a>
+                                <a class="icon-wrapper" href=""><img src="images/icon-ig.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- <div class="wrapper"></div> -->
+        <div class="block1 flex">
+            <div class="bg-1">
+                <img src="images/irregular/kv-web.jpg" alt="">
+            </div>
+            <div class="logo">
+                <img src="images/irregular/WATZ_irregular_LOGO.png" alt="">
+            </div>
+            <div class="scroll-down flex">
+                <h3>SCROLL</h3>
+                <img src="images/irregular/scroll-down.svg" alt="">
+            </div>
+        </div>
+        <div class="block2 flex">
+            <ul class="bg-line flex">
+                <li class="">
+                    <img src="images/irregular/square1-1.jpg" alt="">
+                </li>
+                <li class="">
+                    <img src="images/irregular/square1-2.svg" alt="">
+                </li>
+                <li class="">
+                    <img src="images/irregular/square1-3.svg" alt="">
+                </li>
+                <li class="">
+                    <img src="images/irregular/square1-4.jpg" alt="">
+                </li>
+            </ul>
+            <ul class="bg-line flex">
+                <li class="">
+                    <img src="images/irregular/square2-1.jpg" alt="">
+                </li>
+                <li class="">
+                    <img src="images/irregular/square2-2.svg" alt="">
+                </li>
+                <li class="">
+                    <img src="images/irregular/square2-3.svg" alt="">
+                </li>
+                <li class="">
+                    <img src="images/irregular/square2-4.jpg" alt="">
+                </li>
+            </ul>
+            <ul class="bg-line flex">
+                <li class="">
+                    <img src="images/irregular/square3-1.jpg" alt="">
+                </li>
+                <li class="">
+                    <img src="images/irregular/square3-2.svg" alt="">
+                </li>
+                <li class="">
+                    <img src="images/irregular/square3-3.svg" alt="">
+                </li>
+                <li class="">
+                    <img src="images/irregular/square3-4.jpg" alt="">
+                </li>
+            </ul>
+            <ul class="bg-line flex">
+                <li class="">
+                    <img src="images/irregular/square4-1.jpg" alt="">
+                </li>
+                <li class="">
+                    <img src="images/irregular/square4-2.svg" alt="">
+                </li>
+                <li class="">
+                    <img src="images/irregular/square4-3.svg" alt="">
+                </li>
+                <li class="">
+                    <img src="images/irregular/square4-4.jpg" alt="">
+                </li>
+            </ul>
+            <div class="center-frame flex">
+                <div class="watzbox">
+                    <img src="images/watzbox2-1.png" alt="">
+                </div>
+                <button class="seemore btn-coral flex">
+                    <h3>See More</h3>
+                </button>
+            </div>
+        </div>
+        <div class="block3 flex">
+            <div class="bg-3 flex">
+                <img src="images/irregular/bg3-left.svg" alt="">
+                <img src="images/irregular/bg3-right.svg" alt="">
+            </div>
+            <img class="path-up" src="images/irregular/Path-down.svg" alt="">
+            <img class="pic" src="images/irregular/WATZ_irregular.png" alt="">
+            <img class="path-down" src="images/irregular/Path-up.svg" alt="">
+            <button class="seemore btn-coral flex">
+                <h3>See More</h3>
+            </button>
+        </div>
+        <div class="block4 flex">
+            <div class="bg4 flex">
+                <img src="images/irregular/popcorn.jpg" alt="">
+            </div>
+            <div class="info flex">
+                <img class="style1" src="images/irregular/style1.jpg" alt="">
+                <div class="title flex">
+                    <h1>styling yourself</h1>
+                    <img src="images/irregular/brush.svg" alt="">
+                </div>
+                <img class="style2" src="images/irregular/style2.jpg" alt="">
+            </div>
+        </div>
+        <div class="block5">
+                <img src="images/irregular/bg5.jpeg" alt="">
+
+        </div>
+
+    </div>
+    <!-- footer -->
+
+    <!-- <footer class="flex">
+            <div class="flex">
+                <a class="icon-wrapper" href=""><img src="images/icon-fb.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-youtube.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-twitter.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-ig.svg" alt=""></a>
+            </div>
+            <h6>Copyright© WATZ Company All rights Reserved.</h6>
+            <img class="bg-footer flex" src="images/footer.svg" alt="">
+        </footer> -->
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="js/nav.js"></script>
+<script>
+
+
+</script>
+
+</html>

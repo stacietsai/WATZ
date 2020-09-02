@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* jumpout notice */
+        
+        .notice {
+            transition: .2s;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            visibility: hidden;
+        }
+        
+        .notice-block {
+            transition: .2s;
+            padding: 30px;
+            background: #FF9685;
+            border-radius: 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            flex-direction: column;
+            align-items: center;
+            z-index: 21;
+            opacity: 0;
+        }
+        
+        .notice-bg {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: #404040;
+            opacity: .8;
+        }
+        
+        .notice-top {
+            margin-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .notice-top img {
+            height: 40px;
+        }
+        
+        .notice-top h3 {
+            margin-left: 8px;
+            white-space: nowrap;
+            color: white;
+        }
+        
+        .notice-btn {
+            width: 80px;
+            height: 40px;
+            background: #F2DE79;
+            border: 0;
+            border-radius: 2px;
+            color: #404040;
+            outline: none;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        
+        .notice-bottom h3 {
+            color: white;
+            white-space: nowrap;
+        }
+        
+        .notice.active {
+            visibility: visible;
+            z-index: 30;
+        }
+        
+        .notice.active .notice-block {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- jumpout notice -->
+    <div class="notice">
+        <div class="notice-bg"></div>
+        <div class="notice-block flex">
+            <div class="notice-top flex">
+                <img src="images/icon-sadtrashcan.svg " alt=" ">
+                <h3>確定要把我丟掉?</h3>
+            </div>
+            <div class="notice-bottom">
+                <button class="notice-btn">丟</button>
+                <button class="notice-btn" onclick="keepitem()">不丟</button>
+            </div>
+        </div>
+    </div>
+    <div class="container flex ">
+        <h1 onclick="notice()">click me to show notice</h1>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js " integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=" anonymous "></script>
+<script src="js/nav.js "></script>
+<script>
+    function notice() {
+        $(".notice").addClass("active");
+    }
+
+    function keepitem() {
+        $(".notice").removeClass("active");
+    }
+</script>
+
+</html>

@@ -1,0 +1,59 @@
+
+        body,
+        html {
+            font-family: '微軟正黑體';
+        }
+
+        /* section {
+            margin-bottom: 25px;
+        } */
+
+        /* section:nth-child(even){ background: #f6f6f6; } */
+
+        .wrap {
+            width: 1010px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* ------------------------- slick slider */
+        /* 圖片寬高設定 */
+        .single .Pic {
+            width: 300px;
+        }
+
+        .autoplay .Pic {}
+
+        /* 自訂左右按鍵樣式 */
+        .Slider .slick-prev,
+        .Slider .slick-next {
+            width: 35px;
+            height: 66px;
+        }
+
+        /* .Slider .slick-prev,
+.Slider .slick-prev:hover,
+.Slider .slick-prev:focus{ background: url('../images/left.png'); }
+.Slider .slick-next,
+.Slider .slick-next:hover,
+.Slider .slick-next:focus{ background: url('../images/right.png'); } */
+
+        /* 隱藏左右按鈕預設圖片 */
+        .Slider .slick-prev:before,
+        .Slider .slick-next:before,
+        .Slider .slick-prev:hover:before,
+        .Slider .slick-prev:focus:before,
+        .Slider .slick-next:hover:before,
+        .Slider .slick-next:focus:before {
+            opacity: 0;
+        }
+
+        .Slider .slick-prev.slick-disabled:before,
+        .Slider .slick-next.slick-disabled:before {
+            opacity: 0;
+        }
+
+        /* 圓點位置 */
+        .Slider .slick-dots {
+            bottom: -30px;
+        }

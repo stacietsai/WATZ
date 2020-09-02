@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Delivery</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <style>
+        body {
+            background-size: cover;
+            background-image: url(images/BG3.svg);
+            background-repeat: repeat-y;
+        }
+
+        .container {
+            overflow: none;
+        }
+
+        .nav {
+            position: fixed;
+        }
+
+        .wrapper {
+            width: 1200px;
+            justify-content: space-between;
+            margin-top: 120px;
+            /* border: 1px solid gold; */
+        }
+
+        .block-left {
+            width: 67%;
+            /* border: 1px solid rgb(100, 248, 63); */
+            position: relative;
+        }
+
+        .block-right {
+            width: 30%;
+            /* border: 1px solid rgb(34, 220, 245); */
+
+        }
+
+        .block-fixed {
+            width: 100%;
+            right: calc(50vw - 600px);
+            flex-direction: column;
+            position: sticky;
+            top: 120px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .wrapper {
+                width: 90vw;
+                
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            .wrapper {
+                flex-direction: column;
+                justify-content: flex-start;
+                
+            }
+
+            .container {
+                overflow: hidden;
+            }
+
+            .block-left {
+                width: 100%;
+                order: 1;
+            }
+
+            .block-right {
+                width: 100%;
+                margin-top: 30px;
+                order: 2;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .wrapper {
+                margin-top: 80px;
+            }
+        }
+
+        /* ------------------process------------------ */
+
+        .buy-process {
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 15px;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .buy-process-frame {
+            width: 90%;
+            justify-content: space-between;
+            /* border: 1px solid palevioletred; */
+        }
+
+        .each-process {
+            width: 130px;
+            /* height: 55px; */
+            background-color: #F8F4EB;
+            border-radius: 2px;
+            margin: 20px 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .each-process h3 {
+            margin: 10px 0;
+        }
+
+        .each-process h6 {
+            margin-left: 10px;
+        }
+
+        .each-process.here {
+            background-color: #F2DE79;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .each-process {
+                width: 120px;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            .each-process {
+                width: 22%;
+            }
+
+            .each-process h3 {
+                margin: 10px;
+            }
+
+            .each-process h6 {
+                margin: 0 5px;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .each-process {
+                width: 22%;
+                height: 70px;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .each-process h3 {
+                margin: 0px;
+            }
+
+            .each-process.first h6 {
+                margin-right: 0;
+            }
+
+            .each-process h6 {
+                /* margin-right: 0px; */
+                text-align: center;
+            }
+        }
+
+        /* -----------shipping-form------------- */
+
+        .shipping-form {
+            background-color: #ffffff;
+            border-radius: 15px;
+            margin-top: 30px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* order: 0; */
+
+        }
+
+        .shipping-form h3 {
+            color: #03588C;
+        }
+
+        .shipping-form-frame {
+            width: 90%;
+            margin: 30px 0 0 0;
+            /* border: 1px solid plum; */
+        }
+
+        .shipping-form-frame ul {
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .shipping-form-frame ul input {
+            width: 70%;
+            height: 50px;
+            border: 1px solid #F2DE79;
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .shipping-form-frame ul li {
+            width: 80%;
+            align-items: center;
+            justify-content: space-between;
+            margin: 15px 0;
+            padding-inline-start: 2;
+
+        }
+
+        .pickup-ppl-title {
+            width: 95%;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .pickup-ppl-title input {
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+        }
+
+        .same-bookppl {
+            align-items: center;
+        }
+
+        .button {
+            width: 100px;
+            height: 40px;
+            border: 1px solid #F2DE79;
+            border-radius: 2px;
+            background-color: #ffffff;
+            margin: 15px;
+            color: #707070;
+            outline: none;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .button.active {
+            border-radius: 2px;
+            background-color: #F2DE79;
+        }
+
+        .button:hover {
+            background-color: #f2de79a6;
+        }
+
+        .pay-choose {
+            margin-top: 30px;
+        }
+
+        .receipt-choose {
+            margin-top: 10px;
+        }
+
+        .peper-receipt {
+            margin: 10px;
+            flex-direction: column;
+            display: none;
+        }
+
+        .peper-receipt.show {
+            display: block;
+        }
+
+        .radio-frame {
+            margin: 10px;
+        }
+
+        .radio-btn {
+            width: 20px;
+            height: 20px;
+            appearance: none;
+            position: relative;
+            margin: 0px 15px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .radio-btn:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 1px solid #F2DE79;
+            display: inline-block;
+            border-radius: 50%;
+            vertical-align: middle;
+
+        }
+
+        .radio-btn:checked:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 1px solid #F2DE79;
+            display: inline-block;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .radio-btn:checked:after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            text-align: center;
+            background: #F2DE79;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            /* transition: opacity: ;; */
+        }
+
+        .info .info-input {
+            width: 250px;
+            height: 35px;
+            border: 1px solid #F2DE79;
+            border-radius: 2px;
+            margin-left: 20px;
+            outline: none;
+        }
+
+        .peper-receipt .info {
+            align-items: center;
+            justify-content: start;
+            margin: 20px 30px;
+            /* border: 1px solid royalblue; */
+        }
+
+        .cloud-receipt {
+            display: none;
+        }
+
+        .cloud-receipt.show {
+            display: block;
+        }
+
+        .cloud-receipt .info {
+            align-items: center;
+            justify-content: start;
+            margin: 20px 30px;
+        }
+
+        .donate-receipt {
+            display: none;
+        }
+
+        .donate-receipt.show {
+            display: block;
+        }
+
+        .order-remark {
+            margin-top: 30px;
+        }
+
+        .remark-textarea {
+            margin: 30px;
+            width: 90%;
+            height: 130px;
+            border: 1px solid #F2DE79;
+            outline: none;
+        }
+
+        .pay-btn {
+            width: 140px;
+            height: 40px;
+            margin: 30px 20px;
+        }
+        .pay-showin922{
+            display: none;
+            justify-content: center;
+            /* border: 1px solid indianred; */
+        }
+
+        .pay-btn.gopay:hover {
+            background-color: #0388A6;
+        }
+
+        .pay-btn.prev {
+            background-color: #0388A6;
+        }
+
+        .pay-btn.prev:hover {
+            background-color: #FF9685;
+        }
+
+        @media screen and (max-width: 1200px) {
+            
+        }
+
+        @media screen and (max-width: 992px) {
+            .shipping-form-frame {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .shipping-form-frame ul {
+                justify-content: center;
+            }
+
+            .shipping-form-frame ul input {
+                width: 100%;
+                height: 45px;
+            }
+
+            .shipping-form-frame ul li {
+                width: 90%;
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 5px 0;
+
+            }
+
+            .shipping-form-frame ul li p {
+                margin-bottom: 10px;
+            }
+            .shipping-form .pay-btn{
+                display: none;
+            }
+            .pay-showin922{
+                display: flex;
+            }
+            
+        }
+
+        @media screen and (max-width: 576px) {
+            .receipt-choose-frame{
+                flex-direction: column;
+            }
+            .peper-receipt{
+                margin: 10px 0;
+            }
+            .radio-frame {
+            margin: 10px 0;
+        }
+            .peper-receipt .info{
+                margin: 10px 15px;
+            }
+        }
+
+        /* ---------------return------------ */
+        .return-detail {
+            /* width: 800px; */
+            background-color: #ffffff;
+            border-radius: 15px;
+            margin-top: 30px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* order: 1; */
+
+        }
+
+        .return-detail-frame {
+            width: 90%;
+            margin: 30px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            
+        }
+
+        @media screen and (max-width: 992px) {
+            
+        }
+
+        @media screen and (max-width: 576px) {}
+
+
+        /* --------------right fix part------------- */
+        /* --------------order-list------------- */
+
+        .order-list {
+            background-color: #ffffff;
+            border-radius: 15px;
+            /* border: 1px solid rgb(212, 52, 132); */
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            position: sticky;
+            top: 120px;
+        }
+
+        .order-list.showin922 {
+            background-color: #ffffff;
+            border-radius: 15px 15px 0 0;
+            /* border: 1px solid rgb(212, 52, 132); */
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            position: sticky;
+            margin: 0;
+            transition: 1s;
+            display: none;
+            margin-top: 30px;
+
+        }
+
+        .order-list.showin922.open {
+            /* height: 600px; */
+        }
+
+        .order-list h3 {
+            color: #03588C;
+        }
+
+        .order-list-frame {
+            width: 90%;
+            /* border: 1px solid rgb(212, 52, 132); */
+            flex-direction: column;
+            margin: 30px 0px;
+        }
+
+        .order-list-title {
+            width: 98%;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .order-list-title h3 {
+            margin-bottom: 5px;
+        }
+
+        .seemore {
+            color: #FF9685;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .list-scroll {
+            width: 100%;
+            height: 35vh;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        .list-scroll.showin922 {
+            width: 100%;
+            height: 25vh;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        .list-scroll h4 {
+            color: #707070;
+        }
+
+        .list-scroll::-webkit-scrollbar-track-piece {
+            background-color: #F8F4EB;
+        }
+
+        .list-scroll::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+
+        }
+
+        .list-scroll::-webkit-scrollbar-thumb {
+            background-color: #F2DE79;
+            background-clip: padding-box;
+            min-height: 28px;
+            border-radius: 20px;
+        }
+
+        .list-scroll::-webkit-scrollbar-thumb:hover {
+            background-color: #F2DE79;
+            border-radius: 20px;
+        }
+
+        .box-choose {
+            align-items: center;
+        }
+
+        .box-choose .box-img {
+            width: 150px;
+        }
+
+        .box-type-detail {
+            /* width: 300px; */
+            height: 120px;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .socks-detail {
+            flex-direction: column;
+            /* border: 1px solid teal; */
+
+        }
+
+        .eachsock-list {
+            width: 97%;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .img-product {
+            width: 90px;
+            margin-left: 7px;
+        }
+
+        .img-product img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+
+        .socks-nameNprice {
+            width: 65%;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media screen and (max-width: 1200px) {}
+
+        @media screen and (max-width: 992px) {
+            .order-list {
+                display: none;
+            }
+
+            .order-list.showin922 {
+                display: flex;
+            }
+
+        }
+
+        @media screen and (max-width: 576px) {}
+
+        /* --------------total-price------------- */
+        .total-price {
+            width: 85%;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            /* order: ; */
+
+        }
+
+        .total-price.showin922 {
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 0 0 15px 15px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            /* border: 1px solid yellowgreen; */
+            transition: .5s;
+            display: none;
+            margin: 0;
+        }
+
+        .total-price.showin922 ul {
+            width: 85%;
+            height: 100%;
+            /* flex-direction: column; */
+            /* margin-bottom: 10px; */
+            /* border: 1px solid yellow; */
+            
+        }
+        .total-price.showin922 ul{
+            margin-top: 0;
+        }
+        .total-price h3 {
+            color: #03588C;
+
+        }
+        /* .total-price.showin922 h3 {
+            margin: 20px 0;
+        } */
+
+        .total-price ul {
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 20px;
+
+        }
+        .total-price ul li {
+            height: 35px;
+            justify-content: space-between;
+        }
+
+        .line {
+            width: 95%;
+            height: 1px;
+            border-top: 2px solid #E2E2E2;
+            margin: 10px auto;
+        }
+
+        footer {
+            margin-top: 50px;
+        }
+
+        @media screen and (max-width: 1200px) {}
+
+        @media screen and (max-width: 992px) {
+            .total-price {
+                display: none;
+            }
+
+            .total-price.showin922 {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container flex">
+        <nav class="nav flex transition">
+            <div class="nav-logo flex">
+                <a class="img-logo-img" href=""><img src="images/logo-img.svg" alt=""></a>
+                <a class="img-logo-text" href=""><img src="images/logo-text.svg" alt=""></a>
+            </div>
+            <ul class="nav-list flex transition">
+                <li><a href="">PROJECT</a></li>
+                <li><a href="">SHOP</a></li>
+                <li><a href="">DIY</a></li>
+                <li><a href="">WATZ</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+            <div class="nav-icon flex transition">
+                <a class="icon-wrapper" href=""><img class="svg icon" src="images/icon-member.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img class="svg icon" src="images/icon-cart.svg" alt=""></a>
+                <div class="menu flex">
+                    <div class="box-bar transition">
+                        <div class="bar bar1 transition"></div>
+                        <div class="bar bar2 transition"></div>
+                        <div class="bar bar3 transition"></div>
+                    </div>
+                    <div class="menu-bg transition">
+                        <div class="menu-content transition flex">
+                            <a class="img-logo-img" href=""><img src="images/logo-img.svg" alt=""></a>
+                            <ul class="menu-list">
+                                <li><a href="">PROJECT</a></li>
+                                <li><a href="">SHOP</a></li>
+                                <li><a href="">DIY</a></li>
+                                <li><a href="">WATZ</a></li>
+                                <li><a href="">CONTACT</a></li>
+                            </ul>
+                            <div class="flex">
+                                <a class="icon-wrapper" href=""><img src="images/icon-fb.svg" alt=""></a>
+                                <a class="icon-wrapper" href=""><img src="images/icon-youtube.svg" alt=""></a>
+                                <a class="icon-wrapper" href=""><img src="images/icon-twitter.svg" alt=""></a>
+                                <a class="icon-wrapper" href=""><img src="images/icon-ig.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="wrapper flex" action="">
+            <div class="block-left">
+                <div class="buy-process flex">
+                    <ul class="buy-process-frame flex">
+                        <li class="each-process first flex">
+                            <h3></h3>01</h3>
+                            <h6>確認訂單<br>及運送方式</h6>
+                        </li>
+                        <li class="each-process here flex">
+                            <h3>02</h3>
+                            <h6>填寫<br>訂購資料</h6>
+                        </li>
+                        <li class="each-process flex">
+                            <h3>03</h3>
+                            <h6>付款</h6>
+                        </li>
+                        <li class="each-process flex">
+                            <h3>04</h3>
+                            <h6>訂單完成</h6>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-list showin922 flex">
+                    <div class="order-list-frame showin922 flex">
+                        <div class="order-list-title flex">
+                            <h3>訂單資訊</h3>
+                            <h4 class="seemore">查看訂單內容</h4>
+                        </div>
+                        <div class="list-scroll showin922" id="hide">
+                            <div class="box-choose-ordered">
+                                <h4>您選購的禮盒</h4>
+                                <div class="box-choose flex">
+                                    <img class="box-img" src="images/watzbox1-2.png" alt="">
+                                    <div class="box-type-detail flex">
+                                        <h4>芒果派對</h4>
+                                        <div>
+                                            <h6>包裝禮盒</h6>
+                                            <h6>3入裝</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="socks-detail flex">
+                                    <h4>禮盒內容</h4>
+                                    <div class="eachsock-list flex">
+                                        <div class="img-product">
+                                            <img src="/images/product/yellowline-01.jpg" alt="">
+                                        </div>
+                                        <div class="socks-nameNprice flex">
+                                            <h5 class="socks-title">偶速襪子</h5>
+                                            <h5>X1</h5>
+                                            <h5 class="socks-price">NT$180</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="socks-detail flex">
+                                <h4>單購襪子</h4>
+                                <div class="eachsock-list flex">
+                                    <div class="img-product">
+                                        <img src="/images/product/yellowline-01.jpg" alt="">
+                                    </div>
+                                    <div class="socks-nameNprice flex">
+                                        <h5 class="socks-title">偶速襪子</h5>
+                                        <h5>X1</h5>
+                                        <h5 class="socks-price">NT $180</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="total-price showin922 flex">
+                        <ul class="">
+                            <h3>訂購金額</h3>
+                            <li class="flex">
+                                <p>商品總計</p>
+                                <p>900</p>
+                            </li>
+                            <li class="flex">
+                                <p>運費</p>
+                                <p>60</p>
+                            </li>
+                            <li class="flex">
+                                <p>折扣</p>
+                                <p>-20</p>
+                            </li>
+                            <div class="line"></div>
+                            <li class="flex">
+                                <h4>結帳金額</h4>
+                                <h4>940 元</h4>
+                            </li>
+                        </ul>
+                </div>
+                <div class="shipping-form flex">
+                    <div class="shipping-form-frame">
+                        <h3>訂購資料填寫</h3>
+                        <ul class="flex">
+                            <li class="flex">
+                                <p>訂購人姓名</p>
+                                <input type="text">
+                            </li>
+                            <li class="flex">
+                                <p>電話</p>
+                                <input type="text">
+                            </li>
+                            <li class="flex">
+                                <p>E-mail</p>
+                                <input type="text">
+                            </li>
+                            <li class="flex">
+                                <p>郵遞區號</p>
+                                <input type="text">
+                            </li>
+                            <li class="flex">
+                                <p>地址</p>
+                                <input type="text">
+                            </li>
+                        </ul>
+                        <div class="line"></div>
+                        <div class="pickup-ppl-title flex">
+                            <h3>收件人資料填寫</h3>
+                            <div class="same-bookppl flex">
+                                <input type="checkbox">
+                                <h5>收件人同訂購人</h5>
+                            </div>
+                        </div>
+                        <ul class="flex">
+
+                            <li class="flex">
+                                <p>收件人姓名</p>
+                                <input type="text">
+                            </li>
+                            <li class="flex">
+                                <p>電話</p>
+                                <input type="text">
+                            </li>
+                            <li class="flex">
+                                <p>E-mail</p>
+                                <input type="text">
+                            </li>
+                            <li class="flex">
+                                <p>郵遞區號</p>
+                                <input type="text">
+                            </li>
+                            <li class="flex">
+                                <p>地址</p>
+                                <input type="text">
+                            </li>
+                        </ul>
+                        <div class="line"></div>
+                        <div class="pay-choose">
+                            <h3>付款方式選擇</h3>
+                            <div>
+                                <button class="button payBtn active" href="#">信用卡</button>
+                                <button class="button payBtn" href="#">到貨付款</button>
+                            </div>
+                        </div>
+                        <div class="receipt-choose">
+                            <h3>發票選擇</h3>
+                            <div class="receipt-choose-frame flex">
+                                <div>
+                                <button class="button receiptBtn active" href="#" id="paper" data-val="1">紙本發票</button>
+                                <button class="button receiptBtn" href="#" id="elec" data-val="1">電子發票</button></div>
+                                <div>
+                                <button class="button receiptBtn" href="#" id="icloud" data-val="1">雲端載具</button>
+                                <button class="button receiptBtn" href="#" id="donate" data-val="1">發票捐贈</button></div>
+                            </div>
+                            <div class="peper-receipt flex show">
+                                <div class="radio-frame flex">
+                                    <input class="radio-btn " name="receipt-radio-btn" type="radio" checked></input>
+                                    <p>二聯式發票</p>
+                                </div>
+                                <div class="radio-frame flex">
+                                    <input class="radio-btn" name="receipt-radio-btn" type="radio"></input>
+                                    <p>三聯式發票</p>
+                                </div>
+                                <div class="info flex">
+                                    <p>統一編號號碼</p>
+                                    <input class="info-input" type="text">
+                                </div>
+                                <div class="info flex">
+                                    <p>公司抬頭名稱</p>
+                                    <input class="info-input" type="text">
+                                </div>
+                            </div>
+                            <div class="cloud-receipt">
+                                <div class="info flex">
+                                    <p>載具手機條碼</p>
+                                    <input class="info-input" type="text">
+                                </div>
+                            </div>
+                            <div class="donate-receipt flex">
+                                <div class="radio-frame flex">
+                                    <input class="radio-btn " name="receipt-radio-btn" type="radio"></input>
+                                    <p class="">捐贈至心路基金會</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="order-remark">
+                            <h3>訂單備註</h3>
+                            <textarea class="remark-textarea" name="" id="" cols="30" rows="10"
+                                placeholder="禮盒訂單細節或收件時間須備註的都可以跟我們說哦！（限200字以內）"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="flex">
+                        <button class="pay-btn btn-blue prev">回上一頁</button>
+                        <button class="pay-btn btn-coral gopay">前往結帳</button>
+
+                    </div>
+                </div>
+                <div class="return-detail flex">
+                    <ul class="return-detail-frame">
+                        <h3>退/換貨與退款資訊</h3>
+                        <p>退/換貨與退款
+                            <br>
+                            ・襪子屬個人貼身用品，如拆封襪子吊牌，將不適用七天鑑賞期。
+                            <br>
+                            ・如需退/換貨或退款，請務必保留完整包裝，並在收到商品後七天內mail至
+                            &nbsp;&nbsp;watz@watzservice.com。
+                            <br>
+                            ・可退/換貨之狀況：商品內容或數量有誤、商品瑕疵（需提供清晰照片）。
+                            <br>
+                            ・不可退/換貨之狀況：尺寸不合、商品與想像不符等。 </p>
+                    </ul>
+                </div>
+                <div class="pay-showin922 flex">
+                    <button class="pay-btn  btn-blue prev">回上一頁</button>
+                    <button class="pay-btn  btn-coral gopay">前往結帳</button>
+
+                </div>
+            </div>
+            <div class="block-right ">
+                <div class="order-list flex">
+                    <div class="order-list-frame flex">
+                        <h3>訂單資訊</h3>
+                        <div class="list-scroll">
+                            <div class="box-choose-ordered">
+                                <h4>您選購的禮盒</h4>
+                                <div class="box-choose flex">
+                                    <img class="box-img" src="images/watzbox1-2.png" alt="">
+                                    <div class="box-type-detail flex">
+                                        <h4>芒果派對</h4>
+                                        <div>
+                                            <h6>包裝禮盒</h6>
+                                            <h6>3入裝</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="socks-detail flex">
+                                    <h4>禮盒內容</h4>
+                                    <div class="eachsock-list flex">
+                                        <div class="img-product">
+                                            <img src="/images/product/yellowline-01.jpg" alt="">
+                                        </div>
+                                        <div class="socks-nameNprice flex">
+                                            <h5 class="socks-title">偶速襪子</h5>
+                                            <h5>X1</h5>
+                                            <h5 class="socks-price">NT$180</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="socks-detail flex">
+                                <h4>單購襪子</h4>
+                                <div class="eachsock-list flex">
+                                    <div class="img-product">
+                                        <img src="/images/product/yellowline-01.jpg" alt="">
+                                    </div>
+                                    <div class="socks-nameNprice flex">
+                                        <h5 class="socks-title">偶速襪子</h5>
+                                        <h5>X1</h5>
+                                        <h5 class="socks-price">NT $180</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="total-price flex">
+                        <h3>訂購金額</h3>
+                        <ul>
+                            <li class="flex">
+                                <p>商品總計</p>
+                                <p>900</p>
+                            </li>
+                            <li class="flex">
+                                <p>運費</p>
+                                <p>60</p>
+                            </li>
+                            <li class="flex">
+                                <p>折扣</p>
+                                <p>-20</p>
+                            </li>
+                            <div class="line"></div>
+                            <li class="flex">
+                                <h4>結帳金額</h4>
+                                <h4>940 元</h4>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- btn-top -->
+        <div class="btn-top flex transition" id="goTop">
+            <img src="images/arrow-top.svg" alt="">
+            <h3>TOP</h3>
+            <div class="bg-btn-top transition"></div>
+        </div>
+        <!-- footer -->
+    </div>
+    <footer class="flex">
+        <div class="flex">
+            <a class="icon-wrapper" href=""><img src="images/icon-fb.svg" alt=""></a>
+            <a class="icon-wrapper" href=""><img src="images/icon-youtube.svg" alt=""></a>
+            <a class="icon-wrapper" href=""><img src="images/icon-twitter.svg" alt=""></a>
+            <a class="icon-wrapper" href=""><img src="images/icon-ig.svg" alt=""></a>
+        </div>
+        <h6>Copyright© WATZ Company All rights Reserved.</h6>
+        <img class="bg-footer flex" src="images/footer.svg" alt="">
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="js/nav.js"></script>
+    <script>
+        ///黃色按鈕////
+        $(".payBtn").click(function () {
+            $(this).addClass('active')
+                .siblings().removeClass('active');
+        });
+
+        ///收據按鈕選擇顯示不同選單////
+        $("#paper").click(function () {
+            $(".peper-receipt").addClass('show')
+                .siblings().removeClass('show');
+        });
+        $("#elec").click(function () {
+            $(".peper-receipt").addClass('show')
+                .siblings().removeClass('show');
+        });
+        $("#icloud").click(function () {
+            $(".cloud-receipt").addClass('show')
+                .siblings().removeClass('show');
+        });
+        $("#donate").click(function () {
+            $(".donate-receipt").addClass('show')
+                .siblings().removeClass('show');
+        });
+
+        
+        // let result = "";
+        // $('input:checkbox:checked[name="receipt-radio-btn"]').val();
+
+        ///922顯示訂單資訊裡的查看訂單內容顯示＆隱藏///
+        $(document).ready(function () {
+            $("#hide").hide();
+            $(".seemore").click(function () {
+                $("#hide").slideToggle()
+            });
+        });
+
+        const pairBtns = $('.receiptBtn');
+
+        pairBtns.click(function () {
+            const me = this;
+            pairBtns.each(function(){
+                if(this!==me){
+                    $(this).removeClass('active');
+                }
+            });
+            $(this).toggleClass('active');
+        });
+    </script>
+
+</body>
+
+</html>

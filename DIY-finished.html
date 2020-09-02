@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY DONE</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.svg">
+</head>
+<style>
+    .container {
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        background-size: cover;
+        background-image: url(images/BG2.svg);
+        background-repeat: repeat-y;
+        user-select: none;
+    }
+
+    .wrapper {
+        width: 1200px;
+        height: calc(100vh - 160px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .block {
+        width: 500px;
+        height: 500px;
+        /* border: 1px solid red; */
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 100px 0 30px;
+    }
+
+    .img-bling {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .img-bling {
+        position: absolute;
+    }
+
+    .img-pattern-watz {
+        z-index: 1;
+        width: 380px;
+        height: 380px;
+        object-fit: contain;
+    }
+
+    h2 {
+        color: #03588C;
+    }
+
+    .btn {
+        width: 480px;
+        margin: 10px 0 40px;
+        justify-content: space-between;
+    }
+
+    .btn-coral:hover, .btn-blue:hover {
+    background: #0388A6;
+}
+
+    .btn button {
+        width: 230px;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        z-index: 0;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .wrapper {
+            width: 100vw;
+            height: 100vh;
+            margin-bottom: 20vh;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .wrapper {
+            margin-bottom: 25vh;
+        }
+        .block {
+            width: 50vw;
+            height: 50vw;
+        }
+
+        .img-pattern-watz {
+            width: 40vw;
+            height: 40vw;
+        }
+
+        .btn {
+            width: 280px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn button {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .container {
+            background-size: cover;
+            background-image: url(images/BG-mobile2.svg);
+            background-repeat: repeat-y;
+        }
+
+        .wrapper {
+            margin-bottom: 15vh;
+        }
+
+        .block {
+            width: 70vw;
+            height: 70vw;
+        }
+
+        .img-pattern-watz {
+            width: 60vw;
+            height: 60vw;
+        }
+
+        .wrapper h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            width: 280px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn button {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+    }
+</style>
+
+<body>
+    <div class="container flex">
+        <!-- nav -->
+    <nav class="nav flex transition">
+        <div class="nav-logo flex">
+            <a class="img-logo-img" href=""><img src="images/logo-img.svg" alt=""></a>
+            <a class="img-logo-text" href=""><img src="images/logo-text.svg" alt=""></a>
+        </div>
+        <ul class="nav-list flex transition">
+            <li class="dropdown">
+                <a>PROJECT</a>
+                <div class="dropdown-menu flex transition">
+                    <div class="dropdown-bg flex transition">
+                        <a class="" href="">芒果派對</a>
+                        <a class="" href="">群魔亂舞</a>
+                        <a class="" href="">灰姑娘的<br>水晶襪</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="">SHOP</a></li>
+            <li><a href="">DIY</a></li>
+            <li><a href="">WATZ</a></li>
+            <li><a href="">CONTACT</a></li>
+        </ul>
+        <div class="nav-icon flex transition">
+            <a class="icon-wrapper none" href=""><img class="svg icon" src="images/icon-member.svg" alt=""></a>
+            <a class="icon-wrapper none" href=""><img class="svg icon" src="images/icon-cart.svg" alt=""></a>
+            <div class="menu flex">
+                <div class="click-area flex transition" id="menuClickArea">
+                    <div class="box-bar transition">
+                        <div class="bar bar1 transition"></div>
+                        <div class="bar bar2 transition"></div>
+                        <div class="bar bar3 transition"></div>
+                    </div>
+                </div>
+                <div class="menu-bg transition">
+                    <div class="menu-content transition flex">
+                        <a class="img-logo-img" href=""><img src="images/logo-img.svg" alt=""></a>
+                        <ul class="menu-list">
+                            <li class="dropdown">
+                                <a>PROJECT</a>
+                                <div class="dropdown-menu flex transition">
+                                    <div class="dropdown-bg flex transition">
+                                        <a class="" href="">芒果派對</a>
+                                        <a class="" href="">群魔亂舞</a>
+                                        <a class="" href="">灰姑娘的水晶襪</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="">SHOP</a></li>
+                            <li><a href="">DIY</a></li>
+                            <li><a href="">WATZ</a></li>
+                            <li><a href="">CONTACT</a></li>
+                        </ul>
+                        <div class="flex">
+                            <a class="icon-wrapper" href=""><img src="images/icon-fb.svg" alt=""></a>
+                            <a class="icon-wrapper" href=""><img src="images/icon-youtube.svg" alt=""></a>
+                            <a class="icon-wrapper" href=""><img src="images/icon-twitter.svg" alt=""></a>
+                            <a class="icon-wrapper" href=""><img src="images/icon-ig.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- nav -->
+        <!-- btn-top -->
+        <div class="btn-top flex transition" id="goTop">
+            <img src="images/arrow-top.svg" alt="">
+            <h3>TOP</h3>
+            <div class="bg-btn-top transition"></div>
+        </div>
+        <!-- btn-top -->
+        <div class="wrapper flex transition">
+            <div class="block flex transition">
+                <img class="img-bling transition" src="images/bling.svg" alt="">
+                <img class="img-pattern-watz transition" src="images/pattern-watz.svg" alt="">
+            </div>
+            <h2 class="transition">恭喜完成專屬於你的WATZ襪子!</h2>
+            <div class="btn flex transition">
+                <button class="btn-blue">我還要修改</button>
+                <button class="btn-coral">加入購物車</button>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="flex">
+            <div class="footer-icon flex">
+                <a class="icon-wrapper" href=""><img src="images/icon-fb.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-youtube.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-twitter.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-ig.svg" alt=""></a>
+            </div>
+            <h6>Copyright© WATZ Company All rights Reserved.</h6>
+            <img class="bg-footer flex" src="images/footer.svg" alt="">
+        </footer>
+        <!-- footer -->
+        <!-- mobile show list -->
+        <div class="mobile-show fixedlist">
+            <div class="fixedlist-icon flex">
+                <a class="icon-wrapper" href=""><img src="images/icon-faq.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-sock.svg" alt=""></a>
+                <a class="icon-wrapper" href=""><img src="images/icon-member.svg" alt=""></a>
+                <a class="icon-wrapper" href="cart.html"><img src="images/icon-cart.svg" alt=""></a>
+            </div>
+        </div>
+        <!-- mobile show list -->
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="js/nav.js"></script>
+<script>
+
+</script>
+
+</html>
